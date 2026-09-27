@@ -11,7 +11,7 @@ Each phase is sized for one short session. Work through them in order; update
 - Add React integration (`@astrojs/react`).
 - Base folder structure (`src/pages`, `src/components`, `src/layouts`, `src/content`).
 - `.gitignore`.
-- Netlify config skeleton (`netlify.toml`).
+- No deploy config file needed — Vercel auto-detects Astro (zero-config).
 
 **Done when:** `astro dev` runs locally and shows a blank Tailwind-styled page; repo is committed.
 
@@ -55,8 +55,7 @@ labeling from [docs/content.md](content.md#portfolio).
 
 ## Phase 6 — Contact Page
 
-- Contact form (Netlify Forms or Formspree), Calendly embed, email, LinkedIn, downloadable resume
-  link.
+- Contact form (Formspree), Calendly embed, email, LinkedIn, downloadable resume link.
 
 **Done when:** form submits successfully (test submission) and all contact links/embeds work.
 
@@ -81,9 +80,9 @@ posts required yet.
 
 ## Phase 9 — Deploy
 
-- Connect repo to Netlify.
+- Connect repo to Vercel.
 - Verify production build.
 - Confirm contact form works live.
 - Custom domain: noted as a later follow-up, not required for this phase.
 
-**Done when:** site is live on a Netlify subdomain and fully functional.
+**Done when:** site is live on a Vercel subdomain and fully functional.

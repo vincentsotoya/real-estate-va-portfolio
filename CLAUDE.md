@@ -4,7 +4,7 @@ Personal portfolio site positioning Vincent as a real estate virtual assistant (
 engineering background as his edge.
 
 **Stack:** Astro + Tailwind CSS, React components only where interactivity is needed, blog via Astro
-content collections (Markdown/MDX), contact form via Netlify Forms or Formspree, deploy on Netlify.
+content collections (Markdown/MDX), contact form via Formspree, deploy on Vercel.
 
 **Design direction:** modern tech-forward (dark base UI, teal/indigo accent). Full detail in
 [docs/content.md](docs/content.md).

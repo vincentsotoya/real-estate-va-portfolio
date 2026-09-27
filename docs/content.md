@@ -73,7 +73,7 @@ be stated clearly on the Portfolio page itself.
 
 ## Contact
 
-- Form: [placeholder — Netlify Forms or Formspree, decided in Phase 6]
+- Form: Formspree (set up in Phase 6)
 - Calendly: [placeholder link]
 - Email: vincentsotoya20@gmail.com
 - LinkedIn: linkedin.com/in/vincent-sotoya
@@ -98,4 +98,4 @@ Ideas only — no drafts yet:
   Once Vincent has specifics, add them here and update Services/Portfolio copy accordingly.
 - **Working hours:** confirm specific US time zone / hour range for the About page.
 - **Calendly link:** add once set up.
-- **Contact form provider:** decide Netlify Forms vs. Formspree in Phase 6.
+- **Formspree endpoint:** add once the form is created in Phase 6.
