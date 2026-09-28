@@ -1,1 +1,61 @@
 @import "tailwindcss";
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+@theme {
+	/* Palette — dark base, teal primary accent, indigo secondary accent */
+	--color-bg: #0b0f14;
+	--color-surface: #121821;
+	--color-surface-2: #1a2230;
+	--color-border: #243044;
+	--color-text: #e6edf5;
+	--color-muted: #8b9bb0;
+	--color-teal: #2dd4bf;
+	--color-indigo: #818cf8;
+
+	/* Typography */
+	--font-heading: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+	--font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+	--font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, monospace;
+
+	/* Fluid hero headline */
+	--text-hero: clamp(2.25rem, 1.5rem + 3.5vw, 4rem);
+	--text-hero--line-height: 1.08;
+}
+
+@layer base {
+	html {
+		background-color: var(--color-bg);
+		color: var(--color-text);
+		font-family: var(--font-sans);
+		scroll-behavior: smooth;
+	}
+
+	body {
+		min-height: 100dvh;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: var(--font-heading);
+		letter-spacing: -0.02em;
+	}
+
+	::selection {
+		background-color: color-mix(in srgb, var(--color-teal) 35%, transparent);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-teal);
+		outline-offset: 2px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+}

@@ -5,7 +5,7 @@ Reference: [docs/roadmap.md](docs/roadmap.md) (all phases, with "done when" crit
 
 ## Current Phase
 
-Phase 1 — Design System. Phase 0 is complete: repo scaffolded and live on GitHub.
+Phase 2 — Home Page. Phases 0 (setup) and 1 (design system) are complete.
 
 ## Completed
 
@@ -15,15 +15,21 @@ Phase 1 — Design System. Phase 0 is complete: repo scaffolded and live on GitH
       utilities compiling correctly. Pushed to GitHub:
       https://github.com/vincentsotoya/real-estate-va-portfolio (branch `main`).
 
+- [x] **Phase 1 — Design System** — palette (`bg`, `surface`, `surface-2`, `border`, `text`,
+      `muted`, `teal`, `indigo`) and fonts (Space Grotesk headings, Inter body, JetBrains Mono
+      accents, self-hosted via `@fontsource-variable/*`) defined as Tailwind v4 `@theme` tokens in
+      `src/styles/global.css`; `src/layouts/Layout.astro` provides head/meta, skip link, sticky
+      header with active-page nav + mobile menu, "Book a Call" CTA, footer, and page container.
+      `index.astro` uses it as a smoke test. Verified: `npm run build` passes; desktop and 390px
+      mobile render correctly; menu toggles; fonts load; contrast AA-compliant (body text 16:1,
+      muted 6.3:1, teal 9.6:1, indigo 6.4:1).
+
 ## Current Task
 
-- [ ] **Phase 1 — Design System**: define the modern tech-forward palette (dark base +
-      teal/indigo accent) and typography as Tailwind theme tokens; build the shared layout shell
-      (`Layout.astro` with header/nav, footer, page container) that every later page reuses.
+- [ ] **Phase 2 — Home Page**: see [docs/roadmap.md](docs/roadmap.md).
 
 ## Next
 
-- [ ] Phase 2 — Home Page
 - [ ] Phase 3 — Services Page
 - [ ] Phase 4 — Portfolio Page
 - [ ] Phase 5 — About Page
