@@ -1,17 +1,13 @@
 ---
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Vincent Sotoya — Portfolio</title>
-	</head>
-	<body>
-		<h1 class="text-3xl font-bold text-teal-600">Astro + Tailwind + React scaffold is working</h1>
-	</body>
-</html>
+<Layout>
+	<section class="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8">
+		<p class="font-mono text-sm text-indigo">Phase 1 — design system check</p>
+		<h1 class="mt-3 text-hero font-bold">Layout shell is working</h1>
+		<p class="mt-4 max-w-prose text-muted">
+			Header, nav, footer, palette and fonts are applied. Real Home content lands in Phase 2.
+		</p>
+	</section>
+</Layout>

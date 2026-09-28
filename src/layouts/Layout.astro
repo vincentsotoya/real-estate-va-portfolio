@@ -1,0 +1,154 @@
+---
+import "../styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "Vincent Sotoya — Real Estate Virtual Assistant",
+	description = "Real estate virtual assistant with a full-stack engineering background — admin, transaction support, listings, CRM, and tech support.",
+} = Astro.props;
+
+const navLinks = [
+	{ href: "/", label: "Home" },
+	{ href: "/services", label: "Services" },
+	{ href: "/portfolio", label: "Portfolio" },
+	{ href: "/about", label: "About" },
+	{ href: "/blog", label: "Blog" },
+	{ href: "/contact", label: "Contact" },
+];
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isActive = (href: string) =>
+	href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#0b0f14" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>{title}</title>
+	</head>
+	<body class="flex flex-col font-sans antialiased">
+		<a
+			href="#main"
+			class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-teal focus:px-4 focus:py-2 focus:text-bg"
+		>
+			Skip to content
+		</a>
+
+		<header class="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur">
+			<div class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
+				<a href="/" class="font-heading text-lg font-semibold tracking-tight text-text">
+					Vincent<span class="text-teal">.</span>Sotoya
+				</a>
+
+				<nav aria-label="Primary" class="hidden items-center gap-1 md:flex">
+					{
+						navLinks.map((link) => (
+							<a
+								href={link.href}
+								aria-current={isActive(link.href) ? "page" : undefined}
+								class="rounded-md px-3 py-2 text-sm text-muted transition-colors hover:text-text aria-[current=page]:text-teal"
+							>
+								{link.label}
+							</a>
+						))
+					}
+					<a
+						href="/contact"
+						class="ml-3 rounded-md bg-teal px-4 py-2 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+					>
+						Book a Call
+					</a>
+				</nav>
+
+				<button
+					id="menu-toggle"
+					type="button"
+					class="inline-flex h-10 w-10 items-center justify-center rounded-md text-text hover:bg-surface md:hidden"
+					aria-label="Toggle menu"
+					aria-expanded="false"
+					aria-controls="mobile-menu"
+				>
+					<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+						<path d="M4 7h16M4 12h16M4 17h16"></path>
+					</svg>
+				</button>
+			</div>
+
+			<nav id="mobile-menu" aria-label="Mobile" class="hidden border-t border-border bg-surface md:hidden">
+				<div class="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8">
+					{
+						navLinks.map((link) => (
+							<a
+								href={link.href}
+								aria-current={isActive(link.href) ? "page" : undefined}
+								class="rounded-md px-3 py-3 text-lg text-muted hover:text-text aria-[current=page]:text-teal"
+							>
+								{link.label}
+							</a>
+						))
+					}
+					<a
+						href="/contact"
+						class="mt-2 rounded-md bg-teal px-4 py-3 text-center text-lg font-semibold text-bg"
+					>
+						Book a Call
+					</a>
+				</div>
+			</nav>
+		</header>
+
+		<main id="main" class="flex-1">
+			<slot />
+		</main>
+
+		<footer class="border-t border-border bg-surface">
+			<div class="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-10 sm:px-8 md:flex-row md:items-center md:justify-between">
+				<div>
+					<p class="font-heading text-lg font-semibold">
+						Vincent<span class="text-teal">.</span>Sotoya
+					</p>
+					<p class="mt-1 text-sm text-muted">Real estate virtual assistant · Full-stack engineer</p>
+				</div>
+				<ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+					<li>
+						<a class="text-muted transition-colors hover:text-teal" href="mailto:vincentsotoya20@gmail.com">Email</a>
+					</li>
+					<li>
+						<a
+							class="text-muted transition-colors hover:text-teal"
+							href="https://linkedin.com/in/vincent-sotoya"
+							rel="noopener noreferrer"
+							target="_blank">LinkedIn</a
+						>
+					</li>
+				</ul>
+			</div>
+			<div class="border-t border-border">
+				<p class="mx-auto w-full max-w-6xl px-5 py-4 font-mono text-sm text-muted sm:px-8">
+					© {new Date().getFullYear()} Vincent Sotoya
+				</p>
+			</div>
+		</footer>
+
+		<script>
+			const toggle = document.getElementById("menu-toggle");
+			const menu = document.getElementById("mobile-menu");
+			toggle?.addEventListener("click", () => {
+				const open = toggle.getAttribute("aria-expanded") === "true";
+				toggle.setAttribute("aria-expanded", String(!open));
+				menu?.classList.toggle("hidden", open);
+			});
+		</script>
+	</body>
+</html>
