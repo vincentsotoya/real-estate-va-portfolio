@@ -5,7 +5,7 @@ Reference: [docs/roadmap.md](docs/roadmap.md) (all phases, with "done when" crit
 
 ## Current Phase
 
-Phase 2 — Home Page. Phases 0 (setup) and 1 (design system) are complete.
+Phase 3 — Services Page. Phases 0 (setup), 1 (design system), and 2 (home page) are complete.
 
 ## Completed
 
@@ -24,13 +24,26 @@ Phase 2 — Home Page. Phases 0 (setup) and 1 (design system) are complete.
       mobile render correctly; menu toggles; fonts load; contrast AA-compliant (body text 16:1,
       muted 6.3:1, teal 9.6:1, indigo 6.4:1).
 
+- [x] **Phase 2 — Home Page** — `src/pages/index.astro` rebuilt with real copy from
+      [docs/content.md](docs/content.md#home): hero (eyebrow, headline, intro, "Book a Call" +
+      "See the Work" CTAs), "Where I Fit In" service-highlight grid (condensed from the four
+      Services categories, links to `/services`), "Sample Work" teaser (portfolio disclaimer +
+      chips for the six sample items, links to `/portfolio`), and a closing "Book a Call" CTA
+      banner linking to `/contact`. `/services`, `/portfolio`, and `/contact` don't exist yet
+      (later phases) so those links are placeholders. Verified: `npm run build` passes; desktop
+      render (1440px, via Claude in Chrome) confirmed. Mobile-width screenshot could not be
+      verified this session — the browser tool's `resize_window` call reported success but the
+      captured viewport stayed at desktop width — so 390px rendering relies on the same
+      `sm:`/`lg:` Tailwind patterns already confirmed responsive in Phase 1's `Layout.astro`
+      (grid, flex-wrap, stacked CTAs) rather than a fresh screenshot; worth a manual check next
+      session.
+
 ## Current Task
 
-- [ ] **Phase 2 — Home Page**: see [docs/roadmap.md](docs/roadmap.md).
+- [ ] **Phase 3 — Services Page**: see [docs/roadmap.md](docs/roadmap.md).
 
 ## Next
 
-- [ ] Phase 3 — Services Page
 - [ ] Phase 4 — Portfolio Page
 - [ ] Phase 5 — About Page
 - [ ] Phase 6 — Contact Page
