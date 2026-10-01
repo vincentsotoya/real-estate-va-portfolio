@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const samples = [
+	{
+		title: "Property landing page",
+		description: "A sample single-property marketing page.",
+	},
+	{
+		title: "Flyers & social posts",
+		description: "Sample marketing graphics for a listing.",
+	},
+	{
+		title: "Lead follow-up email sequence",
+		description: "A sample automated email sequence for new leads.",
+	},
+	{
+		title: "Transaction tracker",
+		description: "A sample spreadsheet/tool for tracking a deal through closing.",
+	},
+	{
+		title: "Automation demo",
+		description: "A sample automation (e.g., form → notification → CRM update).",
+	},
+	{
+		title: "Market report template",
+		description: "A sample templated report for a market area.",
+	},
+];
+---
+
+<Layout
+	title="Portfolio — Vincent Sotoya"
+	description="Sample real estate VA projects: property landing page, listing graphics, lead follow-up emails, transaction tracker, automation demo, and market report template."
+>
+	<section class="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+		<p class="font-mono text-sm text-indigo">Portfolio</p>
+		<h1 class="mt-3 max-w-3xl text-hero font-bold text-text">Sample work, built to show how I work</h1>
+		<p
+			class="mt-6 max-w-prose rounded-md border border-border bg-surface px-4 py-3 text-base text-muted"
+		>
+			<span class="font-mono text-sm text-teal">Note:</span> Every item below is a sample built to demonstrate
+			capability. None of it is real client work.
+		</p>
+	</section>
+
+	<section class="border-t border-border bg-surface">
+		<div class="mx-auto grid w-full max-w-6xl gap-5 px-5 py-16 sm:grid-cols-2 sm:px-8 lg:grid-cols-3">
+			{
+				samples.map((sample, i) => (
+					<article class="flex flex-col rounded-lg border border-border bg-surface-2 p-6">
+						<div class="flex items-center justify-between">
+							<span class="font-mono text-sm text-indigo">{String(i + 1).padStart(2, "0")}</span>
+							<span class="rounded-full border border-border px-2.5 py-0.5 font-mono text-xs text-muted">
+								Sample project
+							</span>
+						</div>
+						<h2 class="mt-4 font-heading text-xl font-semibold text-text">{sample.title}</h2>
+						<p class="mt-2 text-muted">{sample.description}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="border-t border-border">
+		<div
+			class="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-6 px-5 py-16 sm:px-8 md:flex-row md:items-center"
+		>
+			<div>
+				<h2 class="text-2xl font-bold text-text sm:text-3xl">Want something like this for your business?</h2>
+				<p class="mt-2 max-w-prose text-muted">Tell me what you need and we'll figure out the fit.</p>
+			</div>
+			<a
+				href="/contact"
+				class="shrink-0 rounded-md bg-teal px-6 py-3 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+			>
+				Book a Call
+			</a>
+		</div>
+	</section>
+</Layout>
