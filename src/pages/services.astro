@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const services = [
+	{
+		title: "Admin & Transaction Support",
+		points: [
+			"Process-driven document handling and checklist tracking, informed by years of working from formal specifications in Waterfall-style enterprise delivery.",
+			"Careful attention to detail from a QA/testing background (JUnit, Vitest, program/unit testing).",
+			"Comfortable managing multi-step workflows across interconnected systems.",
+		],
+	},
+	{
+		title: "Listings & Marketing",
+		points: [
+			"Building and updating landing pages and web content (React/Vue.js/frontend experience).",
+			"Organizing and maintaining listing materials with consistent, repeatable processes.",
+		],
+	},
+	{
+		title: "Lead & CRM Management",
+		points: [
+			"Structured data handling and integration experience (frontend-to-backend data flow, MongoDB).",
+			"Process discipline for keeping lead and follow-up pipelines accurate and up to date.",
+		],
+	},
+	{
+		title: "Tech Support",
+		points: [
+			"Troubleshooting and debugging as a core professional skill — investigating discrepancies between expected and actual behavior is daily work (Java/Vue.js/Node.js background).",
+			"Comfortable learning and configuring new tools and software quickly.",
+		],
+	},
+];
+---
+
+<Layout
+	title="Services — Vincent Sotoya"
+	description="Real estate virtual assistant services: admin & transaction support, listings & marketing, lead & CRM management, and tech support."
+>
+	<section class="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+		<p class="font-mono text-sm text-indigo">Services</p>
+		<h1 class="mt-3 max-w-3xl text-hero font-bold text-text">
+			Four ways I can take work off your plate
+		</h1>
+		<p class="mt-6 max-w-prose text-lg text-muted">
+			Real estate admin backed by an engineering mindset: careful, repeatable processes, and the
+			technical skill to fix things when your tools misbehave.
+		</p>
+	</section>
+
+	<section class="border-t border-border bg-surface">
+		<div class="mx-auto grid w-full max-w-6xl gap-5 px-5 py-16 sm:px-8 md:grid-cols-2">
+			{
+				services.map((service) => (
+					<article class="rounded-lg border border-border bg-surface-2 p-6 sm:p-8">
+						<h2 class="font-heading text-xl font-semibold text-text">{service.title}</h2>
+						<ul class="mt-4 space-y-3 text-muted">
+							{service.points.map((point) => (
+								<li class="flex gap-3">
+									<span aria-hidden="true" class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+									<span>{point}</span>
+								</li>
+							))}
+						</ul>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="border-t border-border">
+		<div
+			class="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-6 px-5 py-16 sm:px-8 md:flex-row md:items-center"
+		>
+			<div>
+				<h2 class="text-2xl font-bold text-text sm:text-3xl">Not sure what you need?</h2>
+				<p class="mt-2 max-w-prose text-muted">
+					Tell me what's slowing you down, and I'll show you where I can help.
+				</p>
+			</div>
+			<a
+				href="/contact"
+				class="shrink-0 rounded-md bg-teal px-6 py-3 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+			>
+				Book a Call
+			</a>
+		</div>
+	</section>
+</Layout>

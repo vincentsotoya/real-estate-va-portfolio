@@ -5,7 +5,7 @@ Reference: [docs/roadmap.md](docs/roadmap.md) (all phases, with "done when" crit
 
 ## Current Phase
 
-Phase 3 — Services Page. Phases 0 (setup), 1 (design system), and 2 (home page) are complete.
+Phase 4 — Portfolio Page. Phases 0–3 (setup, design system, home, services) are complete.
 
 ## Completed
 
@@ -38,13 +38,19 @@ Phase 3 — Services Page. Phases 0 (setup), 1 (design system), and 2 (home page
       (grid, flex-wrap, stacked CTAs) rather than a fresh screenshot; worth a manual check next
       session.
 
+- [x] **Phase 3 — Services Page** — `src/pages/services.astro` renders all four service areas
+      (Admin & Transaction Support, Listings & Marketing, Lead & CRM Management, Tech Support) with
+      copy from [docs/content.md](docs/content.md#services), plus a "Book a Call" closing CTA.
+      Copy stays at the "process/technical aptitude" level (no unconfirmed CRM/MLS/Canva names).
+      Verified: `npm run build` passes and emits `/services`. Committed on branch
+      `phase-3-services`, not yet merged to `main`. Visual/mobile render not re-checked.
+
 ## Current Task
 
-- [ ] **Phase 3 — Services Page**: see [docs/roadmap.md](docs/roadmap.md).
+- [ ] **Phase 4 — Portfolio Page**: see [docs/roadmap.md](docs/roadmap.md).
 
 ## Next
 
-- [ ] Phase 4 — Portfolio Page
 - [ ] Phase 5 — About Page
 - [ ] Phase 6 — Contact Page
 - [ ] Phase 7 — Blog Scaffolding
