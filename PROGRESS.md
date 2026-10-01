@@ -49,7 +49,7 @@ Phase 5 — About Page. Phases 0–4 (setup, design system, home, services, port
       [docs/content.md](docs/content.md#portfolio), each tagged "Sample project", with a page-level
       note that none of it is real client work, and a "Book a Call" CTA. Descriptions use only the
       content.md wording (no invented results or tools). Verified: `npm run build` passes and emits
-      `/portfolio`. Not yet visually checked (desktop or 390px). Branch `phase-4-portfolio`.
+      `/portfolio`. Visually verified at desktop (1440px) and 390px (single-column cards, no horizontal overflow; checked via a 390px iframe since `resize_window` does not change the viewport). Merged to `main`.
 
 ## Current Task
 
