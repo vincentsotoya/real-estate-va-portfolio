@@ -5,7 +5,7 @@ Reference: [docs/roadmap.md](docs/roadmap.md) (all phases, with "done when" crit
 
 ## Current Phase
 
-Phase 5 — About Page. Phases 0–4 (setup, design system, home, services, portfolio) are complete.
+Phase 6 — Contact Page. Phases 0–5 (setup, design system, home, services, portfolio, about) are complete.
 
 ## Completed
 
@@ -51,13 +51,21 @@ Phase 5 — About Page. Phases 0–4 (setup, design system, home, services, port
       content.md wording (no invented results or tools). Verified: `npm run build` passes and emits
       `/portfolio`. Visually verified at desktop (1440px) and 390px (single-column cards, no horizontal overflow; checked via a 390px iframe since `resize_window` does not change the viewport). Merged to `main`.
 
+- [x] **Phase 5 — About Page** — `src/pages/about.astro` follows the About outline in
+      [docs/content.md](docs/content.md#about): career-shift timeline (business admin → MERN
+      bootcamp → professional engineering at IBM Philippines / Tensei Philippines / TenseiDataNet),
+      three "why this helps as your VA" cards (specs, 100% JUnit coverage, end-to-end tracing),
+      working-hours section, and a "Book a Call" CTA. Working hours are deliberately generic ("US
+      time zone hours, agree the overlap on a call") because specific hours are still TBD.
+      Verified: `npm run build` passes and emits `/about`; desktop (1440px) and 390px iframe
+      checked (single column, no horizontal overflow).
+
 ## Current Task
 
-- [ ] **Phase 5 — About Page**: see [docs/roadmap.md](docs/roadmap.md).
+- [ ] **Phase 6 — Contact Page**: see [docs/roadmap.md](docs/roadmap.md).
 
 ## Next
 
-- [ ] Phase 6 — Contact Page
 - [ ] Phase 7 — Blog Scaffolding
 - [ ] Phase 8 — Polish & SEO
 - [ ] Phase 9 — Deploy
@@ -66,7 +74,7 @@ See [docs/roadmap.md](docs/roadmap.md) for what each phase covers and its "done 
 
 ## Blockers
 
-None.
+None. Open items for Vincent: specific US working hours (About page), Calendly link (Phase 6).
 
 ## Recent Decisions
 

@@ -1,0 +1,118 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const timeline = [
+	{
+		label: "Business administration",
+		detail: "De La Salle College of Saint Benilde",
+	},
+	{
+		label: "Full-stack bootcamp",
+		detail: "Intensive MERN stack training",
+	},
+	{
+		label: "Professional software engineering",
+		detail: "IBM Philippines → Tensei Philippines → TenseiDataNet (on-site in Fukui, Japan)",
+	},
+];
+
+const strengths = [
+	{
+		title: "Following specs exactly",
+		body: "Every project I've worked on ran on Japanese insurance systems under structured Waterfall SDLC, built from Japanese-language specifications. Precise instructions get followed precisely.",
+	},
+	{
+		title: "Testing rigorously",
+		body: "I delivered 100% JUnit coverage on my assigned components. I check my work the same way whether it's code or a transaction checklist.",
+	},
+	{
+		title: "Tracing problems end to end",
+		body: "I'm used to following an issue across a full system pipeline. That's the same skill that keeps admin, listings, and CRM data running smoothly.",
+	},
+];
+---
+
+<Layout
+	title="About — Vincent Sotoya"
+	description="From business administration to full-stack engineering in Japan: how Vincent Sotoya brings an engineer's discipline to real estate virtual assistant work."
+>
+	<section class="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+		<p class="font-mono text-sm text-indigo">About</p>
+		<h1 class="mt-3 max-w-3xl text-hero font-bold text-text">
+			An engineer's discipline, applied to your real estate business
+		</h1>
+		<p class="mt-6 max-w-prose text-lg text-muted">
+			I started in business administration, retrained as a full-stack developer, and now work as a
+			software engineer. I'm bringing that same careful, spec-driven approach to real estate
+			virtual assistant work.
+		</p>
+	</section>
+
+	<section class="border-t border-border bg-surface">
+		<div class="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8">
+			<h2 class="font-heading text-2xl font-bold text-text sm:text-3xl">The career shift</h2>
+			<ol class="mt-8 grid gap-5 md:grid-cols-3">
+				{
+					timeline.map((step, i) => (
+						<li class="rounded-lg border border-border bg-surface-2 p-6">
+							<span class="font-mono text-sm text-teal">0{i + 1}</span>
+							<h3 class="mt-2 font-heading text-lg font-semibold text-text">{step.label}</h3>
+							<p class="mt-2 text-muted">{step.detail}</p>
+						</li>
+					))
+				}
+			</ol>
+			<p class="mt-8 max-w-prose text-muted">
+				At IBM Philippines, Tensei Philippines, and TenseiDataNet, I worked on Japanese insurance
+				systems, including an on-site assignment in Fukui, Japan.
+			</p>
+		</div>
+	</section>
+
+	<section class="border-t border-border">
+		<div class="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8">
+			<h2 class="font-heading text-2xl font-bold text-text sm:text-3xl">
+				Why that helps as your VA
+			</h2>
+			<div class="mt-8 grid gap-5 md:grid-cols-3">
+				{
+					strengths.map((item) => (
+						<article class="rounded-lg border border-border bg-surface p-6">
+							<h3 class="font-heading text-lg font-semibold text-text">{item.title}</h3>
+							<p class="mt-3 text-muted">{item.body}</p>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="border-t border-border bg-surface">
+		<div class="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8">
+			<h2 class="font-heading text-2xl font-bold text-text sm:text-3xl">Working hours</h2>
+			<p class="mt-4 max-w-prose text-muted">
+				I'm based in Fukui, Japan, and available to work US time zone hours. Tell me your time zone
+				on a call and we'll agree on the overlap that suits you.
+			</p>
+		</div>
+	</section>
+
+	<section class="border-t border-border">
+		<div
+			class="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-6 px-5 py-16 sm:px-8 md:flex-row md:items-center"
+		>
+			<div>
+				<h2 class="text-2xl font-bold text-text sm:text-3xl">Let's talk about your workload</h2>
+				<p class="mt-2 max-w-prose text-muted">
+					Tell me what's slowing you down, and I'll show you where I can help.
+				</p>
+			</div>
+			<a
+				href="/contact"
+				class="shrink-0 rounded-md bg-teal px-6 py-3 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+			>
+				Book a Call
+			</a>
+		</div>
+	</section>
+</Layout>
